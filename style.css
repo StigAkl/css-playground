@@ -1,0 +1,160 @@
+:root {
+  --blue: #1e90ff;
+  --white: #ffffff;
+  --background: #3e93d1;
+  --foreground-svg: #292fab;
+  --flexbox-gradient-start: #6599e7;
+  --flexbox-gradient-end: #4b56d5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: "Nunito";
+  position: relative;
+}
+
+.background-svg {
+  fill: var(--background);
+}
+
+.foreground-svg {
+  fill: var(--foreground-svg);
+}
+.curved-container {
+  width: 100%;
+  height: 200px;
+}
+
+.curved-div {
+  color: #fff;
+  text-align: center;
+  background-color: var(--foreground-svg);
+  overflow: auto;
+  opacity: 0.8;
+  width: 100%;
+}
+
+.curved-div svg {
+  display: block;
+}
+
+.curved-div h1 {
+  font-size: 6rem;
+  font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+  background: -webkit-linear-gradient(rgb(51, 42, 148), rgb(7, 36, 80));
+  -webkit-background-clip: text;
+
+  text-shadow: 4px 4px #141313;
+}
+
+.upper {
+  background-color: var(--background);
+}
+
+.curved-div p {
+  font-size: 1rem;
+  font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+}
+
+h1 {
+  margin: 0;
+}
+.flex-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  bottom: 10%;
+}
+
+.curve-container {
+  position: absolute;
+  z-index: -2;
+}
+
+.background-position {
+  border: 1px solid #efefef;
+  width: 400px;
+  min-height: 200px;
+  margin-top: 150px;
+  font-size: 1.1rem;
+  background-size: 200% 200%;
+  padding: 30px;
+  border: 20px;
+  transition: 2s;
+  color: white;
+  background-position: 0 100%;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 20px;
+  animation: flex-boxes 1.5s;
+  background-image: linear-gradient(
+    to top,
+    var(--flexbox-gradient-start) 20%,
+    var(--flexbox-gradient-end) 51%,
+    transparent 50%
+  );
+}
+
+.background-position h1 {
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.background-position:hover {
+  background-image: linear-gradient(
+    to top,
+    #3769b4 20%,
+    #5437b4 51%,
+    transparent 50%
+  );
+  cursor: pointer;
+  width: 410px;
+  transition: all 0.3s;
+  border-radius: 20px;
+}
+
+/*Keyframes */
+@keyframes flex-boxes {
+  from {
+    background-position: 0 0%;
+    border-radius: 0;
+    color: black;
+  }
+
+  to {
+    background-position: 0 100%;
+    border-radius: 20px;
+    color: white;
+  }
+}
+
+@keyframes card-boxshadow-colored {
+  from {
+    background-color: var(--background);
+    transform: translateY(100%);
+    visibility: visible;
+    opacity: 0;
+  }
+
+  80% {
+    background-color: var(--background 50%);
+    opacity: 0.5;
+  }
+
+  to {
+    background-color: #fff;
+    transform: translateY(0%);
+    opacity: 0.7;
+  }
+}
