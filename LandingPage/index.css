@@ -4,6 +4,7 @@
   --background-gradient-1: #4e5d90e3;
   --background-gradient-2: #1c1c1cf2;
   --red-text-color: #ff4444;
+  --white-text-color: rgb(220, 220, 220);
 }
 
 * {
@@ -13,38 +14,112 @@
   font-family: "Poppins", sans-serif;
 }
 
+body {
+  font-size: 10px;
+}
+
+.text-primary-red {
+  color: var(--red-text-color);
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+/*  
+   NAVBAR
+*/
 .header__container {
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  letter-spacing: 5px;
-  line-height: 80px;
-  font-size: 1.3rem;
-  font-weight: lighter;
-  flex-direction: column;
   background-image: linear-gradient(to bottom right, #4e5d90e3, #1c1c1cf2),
     url("/assets/background3-taxi.jpg");
   background-size: cover;
   background-position: center center;
+  position: relative;
 }
 
-.header__title {
+.navbar {
+  width: 70vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 15px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.navbar .logo h1 {
+  color: var(--red-text-color);
+  font-size: 4rem;
+  font-weight: 300;
+  padding-left: 10px;
+}
+
+.navbar ul {
+  list-style: none;
+  font-size: 0;
+}
+
+.navbar ul li {
+  display: inline-block;
+  font-size: 1.2rem;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: var(--red-text-color);
+}
+
+.nav-item {
+  color: var(--red-text-color);
+}
+
+a:hover {
+  color: var(--red-text-color);
+  font-weight: bold;
+  overflow: hidden;
+}
+
+a::before {
+  display: block;
+  content: attr(title);
+  font-weight: bold;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  cursor: pointer;
+}
+
+/* HEADER DESCRIPTION SECTION */
+.header__description_container {
+  width: 100%;
+  color: var(--white-text-color);
+  letter-spacing: 5px;
+  font-size: 1.3rem;
+  text-align: center;
+  line-height: 8vh;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.header__description {
   font-weight: lighter;
 }
 
-.header__title.intro {
+.header__description.intro {
   animation: fadeInIntro;
   animation-fill-mode: backwards;
-  animation-duration: 2s;
+  animation-duration: 1.5s;
   animation-delay: 1s;
 }
 
-.header__title.subtitle {
+.header__description.subtitle {
   animation: fadeInIntro;
-  animation-duration: 2s;
-  animation-delay: 3s;
+  animation-duration: 1.5s;
+  animation-delay: 2.5s;
   animation-fill-mode: backwards;
 }
 
@@ -52,16 +127,28 @@
   font-weight: lighter;
 }
 
-.header__subtitle_today {
-  font-weight: 700;
+.header__subtitle_phone {
+  font-weight: 500;
   font-size: 4rem;
   color: var(--red-text-color);
   animation: fadeInIntro;
-  animation-duration: 2s;
-  animation-delay: 5s;
+  animation-duration: 1.5s;
+  animation-delay: 4.5s;
   animation-fill-mode: backwards;
+  color: var(--red-text-color);
 }
 
+.header__bottom_details {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--white-text-color);
+  width: 100%;
+  padding: 20px;
+}
+
+/*KEYFRAMES */
 @keyframes fadeInIntro {
   0% {
     opacity: 0;
@@ -73,25 +160,33 @@
   }
 }
 
-/* 
-  MIDDLE SECTION
-*/
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+  }
 
-.middle__section {
-  height: 50vh;
-  background-color: var(--primary-color);
-  filter: brightness(0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+  100% {
+    opacity: 1;
+  }
 }
 
-.middle__section_card {
-  width: 250px;
-  height: 350px;
-  background-color: var(--primary-color);
-  opacity: 0.4;
-  text-align: center;
-  margin-right: 20px;
+/*  MEDIA QUERIES */
+@media screen and (max-width: 1550px) {
+  .navbar {
+    width: 100%;
+  }
+
+  .header__description {
+    font-size: 1.7rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .navbar .logo h1 {
+    font-size: 3rem;
+  }
+
+  .header__description {
+    font-size: 1.7rem;
+  }
 }
