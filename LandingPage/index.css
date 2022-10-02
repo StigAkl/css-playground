@@ -4,7 +4,10 @@
   --background-gradient-1: #4e5d90e3;
   --background-gradient-2: #1c1c1cf2;
   --red-text-color: #ff4444;
+  --red-text-lighter: #ff6a6a;
   --white-text-color: rgb(220, 220, 220);
+  --animation-duration: 1.5s;
+  --animation-delay-factor: 0.8;
 }
 
 * {
@@ -65,11 +68,13 @@ body {
   font-size: 1.2rem;
   padding-right: 5px;
   padding-left: 5px;
+  min-width: 90px;
 }
 
 .nav-item a {
   text-decoration: none;
   color: var(--red-text-color);
+  transition: 0.5s;
 }
 
 .nav-item {
@@ -77,9 +82,7 @@ body {
 }
 
 a:hover {
-  color: var(--red-text-color);
-  font-weight: bold;
-  overflow: hidden;
+  color: var(--white-text-color);
 }
 
 a::before {
@@ -109,17 +112,26 @@ a::before {
   font-weight: lighter;
 }
 
-.header__description.intro {
+.intro-animation-delay-1 {
+  display: inline-block;
   animation: fadeInIntro;
   animation-fill-mode: backwards;
-  animation-duration: 1.5s;
-  animation-delay: 1s;
+  animation-duration: var(--animation-duration);
+  animation-delay: calc(var(--animation-delay-factor) * 0.5s);
+}
+
+.intro-animation-delay-1-5 {
+  display: inline-block;
+  animation: fadeInIntro;
+  animation-fill-mode: backwards;
+  animation-duration: var(--animation-duration);
+  animation-delay: calc(var(--animation-delay-factor) * 1.5s);
 }
 
 .header__description.subtitle {
   animation: fadeInIntro;
-  animation-duration: 1.5s;
-  animation-delay: 2.5s;
+  animation-duration: var(--animation-duration);
+  animation-delay: calc(var(--animation-delay-factor) * 2.5s);
   animation-fill-mode: backwards;
 }
 
@@ -132,8 +144,8 @@ a::before {
   font-size: 4rem;
   color: var(--red-text-color);
   animation: fadeInIntro;
-  animation-duration: 1.5s;
-  animation-delay: 4.5s;
+  animation-duration: var(--animation-duration);
+  animation-delay: calc(var(--animation-delay-factor) * 3.5s);
   animation-fill-mode: backwards;
   color: var(--red-text-color);
 }
@@ -174,6 +186,10 @@ a::before {
 @media screen and (max-width: 1550px) {
   .navbar {
     width: 100%;
+  }
+
+  .navbar .logo h1 {
+    font-size: 3rem;
   }
 
   .header__description {
