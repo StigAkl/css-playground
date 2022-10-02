@@ -1,6 +1,9 @@
 :root {
   --background-color: #885dde;
-  --primary-color: #cad5e2;
+  --primary-color: #2869be;
+  --background-gradient-1: #4e5d90e3;
+  --background-gradient-2: #1c1c1cf2;
+  --red-text-color: #ff4444;
 }
 
 * {
@@ -10,7 +13,7 @@
   font-family: "Poppins", sans-serif;
 }
 
-.header {
+.header__container {
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -21,8 +24,10 @@
   font-size: 1.3rem;
   font-weight: lighter;
   flex-direction: column;
-  background-image: linear-gradient(to bottom right, #3b4e92e3, #2d2d2df2),
-    url("/assets/background2-business.jpg");
+  background-image: linear-gradient(to bottom right, #4e5d90e3, #1c1c1cf2),
+    url("/assets/background3-taxi.jpg");
+  background-size: cover;
+  background-position: center center;
 }
 
 .header__title {
@@ -50,7 +55,7 @@
 .header__subtitle_today {
   font-weight: 700;
   font-size: 4rem;
-  color: #2869be;
+  color: var(--red-text-color);
   animation: fadeInIntro;
   animation-duration: 2s;
   animation-delay: 5s;
@@ -66,4 +71,27 @@
   100% {
     opacity: 1;
   }
+}
+
+/* 
+  MIDDLE SECTION
+*/
+
+.middle__section {
+  height: 50vh;
+  background-color: var(--primary-color);
+  filter: brightness(0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.middle__section_card {
+  width: 250px;
+  height: 350px;
+  background-color: var(--primary-color);
+  opacity: 0.4;
+  text-align: center;
+  margin-right: 20px;
 }
