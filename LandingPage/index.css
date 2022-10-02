@@ -1,0 +1,69 @@
+:root {
+  --background-color: #885dde;
+  --primary-color: #cad5e2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.header {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  letter-spacing: 5px;
+  line-height: 80px;
+  font-size: 1.3rem;
+  font-weight: lighter;
+  flex-direction: column;
+  background-image: linear-gradient(to bottom right, #3b4e92e3, #2d2d2df2),
+    url("/assets/background2-business.jpg");
+}
+
+.header__title {
+  font-weight: lighter;
+}
+
+.header__title.intro {
+  animation: fadeInIntro;
+  animation-fill-mode: backwards;
+  animation-duration: 2s;
+  animation-delay: 1s;
+}
+
+.header__title.subtitle {
+  animation: fadeInIntro;
+  animation-duration: 2s;
+  animation-delay: 3s;
+  animation-fill-mode: backwards;
+}
+
+.header__subtitle {
+  font-weight: lighter;
+}
+
+.header__subtitle_today {
+  font-weight: 700;
+  font-size: 4rem;
+  color: #2869be;
+  animation: fadeInIntro;
+  animation-duration: 2s;
+  animation-delay: 5s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes fadeInIntro {
+  0% {
+    opacity: 0;
+    display: none;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
